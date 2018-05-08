@@ -8,8 +8,10 @@ The project is conceptually dived into three parts:
 * The middle layer that elaborate all information and take a decision in order to take care of your fishes
 * The low level that collects all information retrived from sensors and execute the commands recived from the middle layer as for instance: (status of the enviroment, feed the fishes etc.).
 
+## Implementation
+### Hardware
 At the hardware level, the project take advantage of two boards: Raspberry Pi 3, and Nucleo stm32.
-
+### Software
 For the software level:
 
 * High level part:
