@@ -3,9 +3,13 @@
 A project for automatically and remote feed your fishes, and as a further improvement all your animals.
 
 # How does it work?
-At the hardware level, the project take advantage of two boards: Raspberry Pi 3, and Nucleo stm32
-On the other hand, at software level:
-* Operating System are:
+The project is conceptually dived into two parts:
+* The middle layer that elaborate all information and take a decision
+* The low level that take care of collecting all information retrived from sensors and execute the commands recived from the middle layer as for instance: (status of the enviroment, feed the fishes etc.).
+
+At the hardware level, the project take advantage of two boards: Raspberry Pi 3, and Nucleo stm32.
+On the other hand, at software level we take advantage of:
+* Operating System:
   * Archlinux on the Raspberry Pi 3
   * Riot OS for the Nucleo stm32
 * Programming language:
