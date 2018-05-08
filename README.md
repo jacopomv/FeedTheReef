@@ -8,5 +8,9 @@ On the other hand, at software level:
 * Operating System are:
   * Archlinux on the Raspberry Pi 3
   * Riot OS for the Nucleo stm32
-Who will use this repo or project?
-What is the goal of this project?
+* Programming language:
+  * Python as middle layer on the Raspberry Pi 3
+  * C code on the Nucleo stm32
+
+#Goal of this project
+The Goal of this project is to complete a pervasive system able to take care of your fishes when tou are not at home.
