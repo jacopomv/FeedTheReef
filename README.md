@@ -17,7 +17,7 @@ For the software level:
 * High level part:
   * Remote Control
     * Android Application
-    * Ruby on rails API exposition
+    * Middle layer software on the Raspberry Pi 3(Not decide yet)
 * Middle layer part:
   * Programming language:
     * Python language programming and Postgresql as DBMS on the Raspberry Pi 3
