@@ -13,6 +13,8 @@ At software level we take advantage of:
 * Operating System:
   * Archlinux on the Raspberry Pi 3
   * Riot OS for the Nucleo stm32
+* Remote Control:
+  *
 * Programming language:
   * Python as middle layer on the Raspberry Pi 3
   * C code on the Nucleo stm32
