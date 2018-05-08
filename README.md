@@ -29,3 +29,10 @@ For the software level:
 
 # Goal of this project
 The Goal of this project is to realise a pervasive system able to take care of your fishes when you are abroad.
+
+# Contact us
+Linkedin: 
+ * [Enrico G.M. Verzegnassi](http://www.linkedin.com/in/enrico-verzegnassi)
+ * [Jacopo Maria Valtorta](https://www.linkedin.com/in/jacopo-maria-valtorta)
+ 
+SlideShare: [Feed the Reef](https://www.slideshare.net/JacopoMariaValtorta/feed-the-reef-96402146)
