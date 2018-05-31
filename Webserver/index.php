@@ -23,17 +23,26 @@ document.location = "m.index.php";
   <table border="1">
     <tr>
       <td>
+        <p></p>
         <div align="center">
             <a id="food"><img src="images/food.png" width="64" height="64" align="center"></a>
             <a id="light"><img src="images/light.png" width="64" height="64" align="center"></a>
             <a id="change-water"><img src="images/change-water.png" width="64" height="64" align="center"></a>
             <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
           width="64" height="64" align="center"></a>
-
-          <p>Last Dishes: 08:00</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
-          <p>Temperature: 22°</p>
         </div>
+        <p></p>
+      </td>
+    </tr>
 
+    <tr>
+      <td>
+        <div align="left">
+          <p>Last Meals: 08:00</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
+          <p>Temperature: 23°</p>
+          <p>PH: 5.5</p>
+          <p>Next water refresh: 2/6/18<p>
+        </div>
       </td>
     </tr>
     <tr id="photo" style="display:block">
