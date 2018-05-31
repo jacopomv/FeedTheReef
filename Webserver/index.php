@@ -2,54 +2,44 @@
 <html>
 <head>
   <meta name="generator" content="Bluefish 2.2.7" >
-  <meta name="generator" content="Bluefish 2.2.7" >
-  <meta name="generator" content="Bluefish 2.2.7" >
   <meta charset="UTF-8">
   <title>Verz's Raspberry</title>
-  
+
 <script type="text/javascript">
 <!--
 if (screen.width <= 699) {
 document.location = "m.index.php";
 }
 //-->
-</script>  
-  
+</script>
+
 </head>
 <body>
-    
-  
-  <h1 align="center">Verz's Raspberry</h1>
-  <div align="center">
-    <a id="trans"><img src="images/transmission.png" width="64"
-    height="64" align="center"></a>
-    <a id="setting" href="javascript:show('settings');"><img id="img-setting"src="images/setting-clicked.png" width="64"
-    height="64" align="center"></a>
-  </div>
+
+
+  <h1 align="center">Feed the Reef</h1>
   <p>
   <div id="fish" align="center">
   <table border="1">
     <tr>
       <td>
         <div align="center">
-          <a id="food"><img src="images/food.png" width="64"
-          height="64" align="center"></a> <a id="light"><img src=
-          "images/light.png" width="64" height="64" align=
-          "center"></a> <a id="change-water"><img src=
-          "images/change-water.png" width="64" height="64" align=
-          "center"></a> <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
+            <a id="food"><img src="images/food.png" width="64" height="64" align="center"></a>
+            <a id="light"><img src="images/light.png" width="64" height="64" align="center"></a>
+            <a id="change-water"><img src="images/change-water.png" width="64" height="64" align="center"></a>
+            <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
           width="64" height="64" align="center"></a>
-          
-          <p>ULTIMI
-          PASTI:</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
+
+          <p>Last Dishes: 08:00</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
+          <p>Temperature: 22°</p>
         </div>
+
       </td>
     </tr>
-    <tr id="photo" style="display:block">   
+    <tr id="photo" style="display:block">
        <td>
-        <a href="img-fish.html"><img src=
-        "img-fish/fish.jpeg" width="320" height="240" align=
-        "center"></a>
+        <a href="img-fish.html">
+          <img src="img-fish/fish.jpeg" width="320" height="240" align="center"></a>
       </td>
     </tr>
     <tr>
@@ -58,9 +48,13 @@ document.location = "m.index.php";
     	</td>
     </tr>
   </table>
+  <div align="center">
+    <a id="setting" href="javascript:show('settings');"><img id="img-setting"src="images/setting.png" width="64"
+    height="64" align="center"></a>
   </div>
-  
-  <div id="settings" align="center" style="display:block">
+  </div>
+
+  <div id="settings" align="center" style="display: none;">
   <table border="1">
     <tr style="font-weight: bold;">
       <td>Raspberry - Temp:
@@ -83,11 +77,11 @@ document.location = "m.index.php";
     </tr>
   </table>
   </div>
-  
+
 <script type="text/javascript">
    document.getElementById('trans').href=''+window.location.origin+':4023';
    document.getElementById('live').href=''+window.location.origin+':8080/?action=stream';
-  
+
    function show(id) {
     var elementId = document.getElementById(id);
     if(elementId.style.display=="block") {
@@ -98,7 +92,7 @@ document.location = "m.index.php";
     		document.getElementById("img-setting").src="images/setting-clicked.png";
     		}
     }
-    
+
     function webcamActivate() {
     	var elementId = document.getElementById("photo");
     	var elementId2 = document.getElementById("streaming");
