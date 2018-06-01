@@ -12,6 +12,18 @@ document.location = "m.index.php";
 }
 //-->
 </script>
+<?php
+
+  if (isset($_GET['command0'])) {
+    shell_exec ('exec/Command0');
+  }
+  if (isset($_GET['command1'])) {
+    shell_exec ('exec/Command1');
+  }
+  if (isset($_GET['command2'])) {
+    shell_exec ('exec/Command2');
+  }
+?>
 
 </head>
 <body>
@@ -25,9 +37,9 @@ document.location = "m.index.php";
       <td>
         <p></p>
         <div align="center">
-            <a id="food"><img src="images/food.png" width="64" height="64" align="center"></a>
-            <a id="light"><img src="images/light.png" width="64" height="64" align="center"></a>
-            <a id="change-water"><img src="images/change-water.png" width="64" height="64" align="center"></a>
+            <a id="food"  href="index.php?command0=true" ><img src="images/food.png" width="64" height="64" align="center" ></a>
+            <a id="light" href="index.php?command1=true"><img src="images/light.png" width="64" height="64" align="center"></a>
+            <a id="change-water" href="index.php?command2=true"><img src="images/change-water.png" width="64" height="64" align="center"></a>
             <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
           width="64" height="64" align="center"></a>
         </div>
@@ -39,8 +51,8 @@ document.location = "m.index.php";
       <td>
         <div align="left">
           <p>Last Meals: 08:00</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
-          <p>Temperature: 23°</p>
-          <p>PH: 5.5</p>
+          <p><?php $output= shell_exec ('cat exec/log |grep Temperature|tail -n 1');echo "<p>$output</p>";?></p>
+          <p><?php $output= shell_exec ('cat exec/log |grep PH| tail -n 1');echo "<p>$output</p>";?></p>
           <p>Next water refresh: 2/6/18<p>
         </div>
       </td>
