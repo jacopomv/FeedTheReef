@@ -3,6 +3,7 @@
 from http import client
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
+from PythonServer.aquarium.aquarium import Aquarium
 
 hostName = ""
 hostPort = 8888
@@ -12,7 +13,8 @@ class MyServer(BaseHTTPRequestHandler):
 	#	GET is for clients geting the predi
 	def do_GET(self):
 		self.send_response(200)
-		self.wfile.write(bytes("<p>You accessed path: %s</p>" % self.path, "utf-8"))
+		aquarium = Aquarium()
+		self.wfile.write(bytes("<p>You accessed path: %s</p>" % aquarium.getTemperature(), "utf-8"))
 
 	#	POST is for submitting data.
 	def do_POST(self):
