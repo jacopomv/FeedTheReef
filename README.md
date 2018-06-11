@@ -22,6 +22,7 @@ TODO
 * Analog Temperatur Sensos
 * Led lights
 * Nucleo STM32-F401.
+* Webcam
 
 ### Technologies
 * ARM Mbed OS
