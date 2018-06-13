@@ -1,0 +1,23 @@
+AuthName "Verz website"
+AuthType Basic
+AuthUserFile /etc/httpd/.htpasswd
+require valid-user 
+
+
+Deny from 37.54.46
+Deny from 82.118.237
+
+RewriteCond %{HTTP_USER_AGENT} "iphone|ipad|android|blackberry" [NC]
+RewriteRule ^(.+)$ /mobile/ [R=301,L]
+
+#RewriteCond %{HTTP_USER_AGENT} !(iphone|ipad|android|blackberry) [NC]
+#RewriteRule ^/?$ index.php [R]
+
+DirectoryIndex index.php
+
+
+<IfModule mod_rewrite.c>
+SetEnvIfNoCase ^User-Agent$ .*(craftbot|download|extract|stripper|sucker|ninja|clshttp|webspider|leacher|collector|grabber|webpictures) HTTP_SAFE_BADBOT
+SetEnvIfNoCase ^User-Agent$ .*(libwww-perl|aesop_com_spiderman) HTTP_SAFE_BADBOT
+Deny from env=HTTP_SAFE_BADBOT
+</ifModule>
