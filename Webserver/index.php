@@ -15,10 +15,10 @@ document.location = "m.index.php";
 <?php
 
   if (isset($_GET['command0'])) {
-    shell_exec ('exec/Command0');
+    $response = file_get_contents("http://localhost:8888/feed");
   }
   if (isset($_GET['command1'])) {
-    shell_exec ('exec/Command1');
+    $response = file_get_contents("http://localhost:8888/light");
   }
   if (isset($_GET['command2'])) {
     shell_exec ('exec/Command2');
@@ -51,9 +51,8 @@ document.location = "m.index.php";
       <td>
         <div align="left">
           <p>Last Meals: 08:00</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
-          <p><?php $output= shell_exec ('cat exec/log |grep Temperature|tail -n 1');echo "<p>$output</p>";?></p>
-          <p><?php $output= shell_exec ('cat exec/log |grep PH| tail -n 1');echo "<p>$output</p>";?></p>
-          <p>Next water refresh: 2/6/18<p>
+          <p><?php $output= file_get_contents("http://localhost:8888/temperature");echo "$output °C";?></p>
+          <p><?php $output= file_get_contents("http://localhost:8888/ph");echo "<p>$output</p>";?></p>
         </div>
       </td>
     </tr>
