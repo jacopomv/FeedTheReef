@@ -15,7 +15,7 @@ The project is conceptually divided into three parts:
 #### Brief description
 The user is able to connect to the web interface from his own laptop or mobile device.
 The information are visible through an Apache Web server supported by a PHP-fpm interpreter, which communicates directly with the backend: a Python Web server running on the Raspberry Pi 3.
-Moreover, the Raspberry is connected through a a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
+Moreover, the Raspberry is connected through a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
 ### Web Interface
 ![](Documentation/images/Interface.png)
@@ -30,11 +30,14 @@ This is the simple web interface through which the user is able to send commands
 * Webcam
 
 ![](Documentation/images/whole_architecture.jpg)
-### Technologies
+
+
+### Technologies used
 * ARM Mbed OS
 * Python
 * Apache 
 * PHP
+* PostgreSQL
 * Bash scripting
 
 ### Future features
@@ -46,10 +49,10 @@ This is the simple web interface through which the user is able to send commands
   <img src="Documentation/Blender/4.Feeder+screw.png" width="500" />
 </p>
 
-We designed a Blender model for the screw and the tank containing the food, beacuse, actually, the current one is really raw handmade.
+We designed a Blender model for the screw and the tank containing the food, beacuse the current one is really coarse handmade.
   
 ### Demo
-TODO
+[Demo - YouTube]()
 
 ### Code
 * [STM Nucleo board](https://github.com/jacopomv/FeedTheReef/tree/master/Nucleo%20STM32%20)
