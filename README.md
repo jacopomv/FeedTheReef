@@ -13,11 +13,13 @@ The project is conceptually divided into three parts:
 ### Architecture
 ![](Documentation/images/architecture.png)
 #### Brief description
-The user is able to connect to the web interface from his own laptop or mobile device. The information are elaborated from an Apache Web server supported with a PHP-fpm interpreter, which communicates directly with a Python Web server running on the Raspberry Pi 3 connected through a serial port to the Nucleo board. Thus, the Nucleo STM32-F401 board sends commands towards different sensors, depending on the action that the user wants to accomplish.
+The user is able to connect to the web interface from his own laptop or mobile device.
+The information are visible through an Apache Web server supported by a PHP-fpm interpreter, which communicates directly with the backend: a Python Web server running on the Raspberry Pi 3.
+Moreover, the Raspberry is connected through a a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
 ### Web Interface
 ![](Documentation/images/Interface.png)
-This is the simple web interface thourgh which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
+This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
