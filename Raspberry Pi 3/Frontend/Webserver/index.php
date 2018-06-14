@@ -20,9 +20,6 @@ document.location = "m.index.php";
   if (isset($_GET['command1'])) {
     $response = file_get_contents("http://localhost:8888/light");
   }
-  if (isset($_GET['command2'])) {
-    shell_exec ('exec/Command2');
-  }
 ?>
 
 </head>
@@ -39,7 +36,6 @@ document.location = "m.index.php";
         <div align="center">
             <a id="food"  href="index.php?command0=true" ><img src="images/food.png" width="64" height="64" align="center" ></a>
             <a id="light" href="index.php?command1=true"><img src="images/light.png" width="64" height="64" align="center"></a>
-            <a id="change-water" href="index.php?command2=true"><img src="images/change-water.png" width="64" height="64" align="center"></a>
             <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
           width="64" height="64" align="center"></a>
         </div>
@@ -50,7 +46,6 @@ document.location = "m.index.php";
     <tr>
       <td>
         <div align="left">
-          <p>Last Meals: 08:00</p><?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
           <p><?php $output= file_get_contents("http://localhost:8888/temperature");echo "$output °C";?></p>
           <p><?php $output= file_get_contents("http://localhost:8888/ph");echo "<p>$output</p>";?></p>
         </div>
@@ -58,13 +53,14 @@ document.location = "m.index.php";
     </tr>
     <tr id="photo" style="display:block">
        <td>
+	<?php  shell_exec ('exec/takeSnap &');?>
         <a href="img-fish.html">
           <img src="img-fish/fish.jpeg" width="320" height="240" align="center"></a>
       </td>
     </tr>
     <tr>
     	<td id="streaming" style="display:none">
-    	<iframe id="ifr" src=""></iframe>
+    	<iframe id="stramingIFR" src="" width="320" height="240"></iframe>
     	</td>
     </tr>
   </table>
@@ -99,8 +95,7 @@ document.location = "m.index.php";
   </div>
 
 <script type="text/javascript">
-   document.getElementById('trans').href=''+window.location.origin+':4023';
-   document.getElementById('live').href=''+window.location.origin+':8080/?action=stream';
+
 
    function show(id) {
     var elementId = document.getElementById(id);
@@ -113,13 +108,15 @@ document.location = "m.index.php";
     		}
     }
 
+
+
     function webcamActivate() {
     	var elementId = document.getElementById("photo");
     	var elementId2 = document.getElementById("streaming");
     	    if(elementId.style.display=="block") {
     	    					elementId.style.display="none";
     	    					elementId2.style.display="block";
-    	    					document.getElementById("ifr").src="http://www.w3schools.com";
+						document.getElementById("stramingIFR").src=''+window.location.origin+':8081';
     	  		 }
    			 else {
     						elementId.style.display="block";
