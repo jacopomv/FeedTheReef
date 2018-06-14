@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="generator" content="Bluefish 2.2.7" >
   <meta charset="UTF-8">
-  <title>Verz's Raspberry</title>
+  <title>Feed The Reef</title>
+
+
+<style>
+#table-container {
+ border: 1px solid #3b83a6;
+}
+</style>
+
 
 <script type="text/javascript">
 <!--
 if (screen.width <= 699) {
-document.location = "m.index.php";
+var logo = document.getElementById("logo");
+logo.width="100%"
+
 }
 //-->
 </script>
@@ -26,10 +35,11 @@ document.location = "m.index.php";
 <body>
 
 
-  <h1 align="center">Feed the Reef</h1>
+  <div align="center"><img id="logo" src="images/Sign.png" width="400" align="center" ></div>
   <p>
   <div id="fish" align="center">
-  <table border="1">
+
+  <table id="table-container">
     <tr>
       <td>
         <p></p>
@@ -38,6 +48,8 @@ document.location = "m.index.php";
             <a id="light" href="index.php?command1=true"><img src="images/light.png" width="64" height="64" align="center"></a>
             <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
           width="64" height="64" align="center"></a>
+	<a id="setting" href="javascript:show('settings');"><img id="img-setting"src="images/setting.png" width="64"
+	    height="64" align="center"></a>
         </div>
         <p></p>
       </td>
@@ -45,7 +57,7 @@ document.location = "m.index.php";
 
     <tr>
       <td>
-        <div align="left">
+        <div align="center">
           <p><?php $output= file_get_contents("http://localhost:8888/temperature");echo "$output °C";?></p>
           <p><?php $output= file_get_contents("http://localhost:8888/ph");echo "<p>$output</p>";?></p>
         </div>
@@ -65,8 +77,7 @@ document.location = "m.index.php";
     </tr>
   </table>
   <div align="center">
-    <a id="setting" href="javascript:show('settings');"><img id="img-setting"src="images/setting.png" width="64"
-    height="64" align="center"></a>
+    
   </div>
   </div>
 

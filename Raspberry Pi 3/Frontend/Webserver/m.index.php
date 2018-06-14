@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Verz's Raspberry</title>
+  <title>Feed The Reef</title>
 <style>
 
 
@@ -13,14 +13,7 @@
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
 }
 
-h1 {
-    position: relative;
-    animation: move 2s;
-    animation-delay: 0s;
-    animation-timing-function:ease-out;
-    -webkit-animation-fill-mode: forwards;
-font-size: 350%;
-}
+
 
 pre {
     display: block;
@@ -30,82 +23,81 @@ pre {
     margin: 1em 0;
 } 
 
-table {
-	width: 100%;
-}
 
-#menu1{
-	width: 100%;
-	display: flex;
-	justify-content:center;
-}
-
-#menu2{
-	width: 100%;
-	display: flex;
-   justify-content: space-around; 
-}
-.menu2-img{
-	width: 80%;
+#table-container {
+ border: 1px solid #3b83a6;
 }
 
 </style>  
+
+<?php
+
+  if (isset($_GET['command0'])) {
+    $response = file_get_contents("http://localhost:8888/feed");
+  }
+  if (isset($_GET['command1'])) {
+    $response = file_get_contents("http://localhost:8888/light");
+  }
+?>
   
 </head>
 <body>
-    
-  
-  <h1>Verz's Raspberry</h1>
-  <div id="menu1">
-    <a id="trans"><img src="images/transmission.png" ></a>
-    <a id="setting" href="javascript:show('settings');"><img id="img-setting"src="images/setting.png"></a>
-  </div>
+
+
+  <div align="center"><img src="images/Sign.png" width="300" align="center" ></div>
   <p>
   <div id="fish" align="center">
-  <table border="1" width="100%">
+
+  <table id="table-container">
     <tr>
       <td>
-        <div id="menu2">
-        
-          <a id="food" ><img src="images/food.png"class="menu2-img" ></a>
-          <a id="light"><img src="images/light.png" class="menu2-img"></a>
-          <a id="change-water"><img src="images/change-water.png" class="menu2-img"></a>
-          <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png" class="menu2-img"></a>
-        </div>  
-        
-          <p style="font-size:400%;">
-          ULTIMI PASTI:
-          
-          <?php $output= shell_exec ('exec/fish_food'); echo "<pre>$output</pre>"; ?>
-          
-          </p>
-        
+        <p></p>
+        <div align="center">
+            <a id="food"  href="index.php?command0=true" ><img src="images/food.png" width="64" height="64" align="center" ></a>
+            <a id="light" href="index.php?command1=true"><img src="images/light.png" width="64" height="64" align="center"></a>
+            <a id="webcam" href="#" onclick="javascript:webcamActivate();"><img src="images/webcam.png"
+          width="64" height="64" align="center"></a>
+	<a id="setting" href="javascript:show('settings');"><img id="img-setting"src="images/setting.png" width="64"
+	    height="64" align="center"></a>
+        </div>
+        <p></p>
       </td>
     </tr>
-    <tr id="photo" style="display:block">   
-       <td align="center">
-       <div>
-        <a href="img-fish.html"><img src=
-        "img-fish/fish.jpeg" width="100%" height="100%"></a>
+
+    <tr>
+      <td>
+        <div align="center">
+          <p><?php $output= file_get_contents("http://localhost:8888/temperature");echo "$output °C";?></p>
+          <p><?php $output= file_get_contents("http://localhost:8888/ph");echo "<p>$output</p>";?></p>
         </div>
+      </td>
+    </tr>
+    <tr id="photo" style="display:block">
+       <td>
+	<?php  shell_exec ('exec/takeSnap &');?>
+        <a href="img-fish.html">
+          <img src="img-fish/fish.jpeg" width="320" height="240" align="center"></a>
       </td>
     </tr>
     <tr>
     	<td id="streaming" style="display:none">
-    	<iframe id="ifr" src=""></iframe>
+    	<iframe id="stramingIFR" src="" width="320" height="240"></iframe>
     	</td>
     </tr>
   </table>
+  <div align="center">
+    
   </div>
-  
-  <div id="settings" align="center" style="display:none">
+  </div>
+
+  <div id="settings" align="center" style="display: none;">
   <table border="1">
     <tr style="font-weight: bold;">
-      <td>
-      <pre>Raspberry - Temperature:<?php echo shell_exec ('cat /sys/class/thermal/thermal_zone0/temp'); ?></pre></td>
+      <td>Raspberry - Temp:
+      <?php echo shell_exec ('cat /sys/class/thermal/thermal_zone0/temp'); ?></td>
     </tr>
     <tr>
-      <td><pre><?php echo shell_exec ('uptime'); ?></pre></td>
+      <td><?php echo shell_exec ('uptime'); ?></td>
     </tr>
     <tr>
       <td>
@@ -121,11 +113,10 @@ table {
     </tr>
   </table>
   </div>
-  
+
 <script type="text/javascript">
-   document.getElementById('trans').href=''+window.location.origin+':4023';
-   document.getElementById('live').href=''+window.location.origin+':8080/?action=stream';
-  
+
+
    function show(id) {
     var elementId = document.getElementById(id);
     if(elementId.style.display=="block") {
@@ -136,14 +127,16 @@ table {
     		document.getElementById("img-setting").src="images/setting-clicked.png";
     		}
     }
-    
+
+
+
     function webcamActivate() {
     	var elementId = document.getElementById("photo");
     	var elementId2 = document.getElementById("streaming");
     	    if(elementId.style.display=="block") {
     	    					elementId.style.display="none";
     	    					elementId2.style.display="block";
-    	    					document.getElementById("ifr").src="http://www.w3schools.com";
+						document.getElementById("stramingIFR").src=''+window.location.origin+':8081';
     	  		 }
    			 else {
     						elementId.style.display="block";
