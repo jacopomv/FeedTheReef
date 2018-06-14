@@ -1,4 +1,4 @@
-# Feed The Reef
+![](Documentation/Logo/Sign.png)
 ![](Documentation/images/fish_tank.png)
 ## Abstract
 Feed The Reef is a group project developed during the Pervasive Systems course at "La Sapienza" University of Rome. The idea is to build an IoT environment in order to realize a smart fish tank. The goal of the project is to provide a cheap and versatile feeding system, in order to allow fish tank's owners to take care of their pets while abroad, during holidays or during the busy work days.
@@ -16,14 +16,15 @@ The project is conceptually divided into three parts:
 The user is able to connect to the web interface from his own laptop or mobile device. The information are elaborated from an Apache Web server supported with a PHP-fpm interpreter, which communicates directly with a Python Web server running on the Raspberry Pi 3 connected through a serial port to the Nucleo board. Thus, the Nucleo STM32-F401 board sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
 ### Web Interface
-TODO
+![](Documentation/images/Interface.png)
+This is the simple web interface thourgh which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
+* Nucleo STM32-F401
 * Analog PH Sensor
-* Analog Temperatur Sensos
+* Analog Temperature Sensor
 * Led lights
-* Nucleo STM32-F401.
 * Webcam
 
 ![](Documentation/images/whole_architecture.jpg)
@@ -34,21 +35,16 @@ TODO
 * PHP
 * Bash scripting
 
-### Software
-For the software level:
+### Future features
+<p align="middle">
+  <img src="Documentation/Blender/Screw.png" width="400" />
+  <img src="Documentation/Blender/1.Feeder+screw.png" width="400" /> 
+  <img src="Documentation/Blender/2.Feeder+screw.png" width="400" />
+  <img src="Documentation/Blender/3.Feeder+screw.png" width="400" />
+  <img src="Documentation/Blender/4.Feeder+screw.png" width="500" />
+</p>
 
-* High level part:
-  * Remote Control
-    * Apache web server
-    * PHP-fpm interpreter
-* Middle layer part:
-  * Web server Phyton
-  * Programming languages:
-    * Python and Postgresql as DBMS on the Raspberry Pi 3
-    * C++ on the Nucleo STM32 board
-* Low layer part:
-  * Operating System:
-    * Arch linux on the Raspberry Pi 3
+We designed a Blender model for the screw and the tank containing the food, beacuse, actually, the current one is really row handmade.
   
 ### Demo
 TODO
