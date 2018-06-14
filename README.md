@@ -44,7 +44,7 @@ This is the simple web interface thourgh which the user is able to send commands
   <img src="Documentation/Blender/4.Feeder+screw.png" width="500" />
 </p>
 
-We designed a Blender model for the screw and the tank containing the food, beacuse, actually, the current one is really row handmade.
+We designed a Blender model for the screw and the tank containing the food, beacuse, actually, the current one is really raw handmade.
   
 ### Demo
 TODO
