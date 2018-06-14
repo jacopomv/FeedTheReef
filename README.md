@@ -62,5 +62,7 @@ Linkedin:
  
 # Check out our project presentation
 SlideShare: [Feed the Reef](https://www.slideshare.net/JacopoMariaValtorta/feed-the-reef-96402146)
+# Merchandising
+![](Documentation/T-Shirt/T-shirt.png)
 #
 ![](Documentation/images/Uniroma1.png)
