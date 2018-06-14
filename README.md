@@ -52,7 +52,7 @@ This is the simple web interface through which the user is able to send commands
 We designed a Blender model for the screw and the tank containing the food, beacuse the current one is really coarse handmade.
   
 ### Demo
-[Demo - YouTube]()
+[Demo - YouTube](https://youtu.be/6Z3a6HSi4M8)
 
 ### Code
 * [STM Nucleo board](https://github.com/jacopomv/FeedTheReef/tree/master/Nucleo%20STM32%20)
@@ -66,7 +66,9 @@ Linkedin:
  * [Jacopo Maria Valtorta](https://www.linkedin.com/in/jacopo-maria-valtorta)
  
 # Check out our project presentation
-SlideShare: [Feed the Reef](https://www.slideshare.net/JacopoMariaValtorta/feed-the-reef-96402146)
+SlideShare: 
+* [Feed the Reef](https://www.slideshare.net/JacopoMariaValtorta/feed-the-reef-96402146)
+* [Feed the Reef - Final Architecture](https://www.slideshare.net/JacopoMariaValtorta/feed-the-reef-final-architecture-presentation)
 # Merchandising
 ![](Documentation/T-Shirt/T-shirt.png)
 #
