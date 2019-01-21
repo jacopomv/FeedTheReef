@@ -22,15 +22,15 @@ The information are visible through an Apache Web server supported by a PHP-fpm 
 Moreover, the Raspberry is connected through a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
 **-Update**
-The "Nucleo STM32-F401" board has been changed with the "B-L072Z-LRWAN1" in order to remove the USB cable between the board and the Raspberry Pi 3 and permit the remote communication through the LoRa technology.
+The "Nucleo STM32-F401" board has been changed with two "B-L072Z-LRWAN1" in order to implement the LoRa technology and remove the USB cable between the previous board and the Raspberry Pi 3. One Lora board is in charge of sense the environment and transmit the data, instead the other LoRa board, connected to the Raspberr Pi 3, receives the data.
 The communication is encrypted through symmetric encryption technology, the well known AES algorithm.
-Still, some work is going on for completing the porting. In particular, the compatibility with the temperature sensor DS1820 not recognized by the board. Help me on this issue on the [official MBED forum](https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
+Still, some work is going on for completing the porting. In particular, the compatibility with the temperature sensor DS1820 not recognized by the "B-L072Z-LRWAN1" board. Help me on this issue on the [official MBED forum](https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
 ### Web Interface
 ![](Documentation/images/Interface.png)
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 
 **-Update**
-Now it is available the [Grafana](https://grafana.com/) platform for viewing and monitor through plots the data recorded by the system.
+The project now include the [Grafana](https://grafana.com/) platform for viewing and monitor through plots the data recorded by the system. The Grafana server is installed and runs on the Raspberri Pi 3.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
@@ -74,6 +74,8 @@ We designed a Blender model for the screw and the tank containing the food, beac
 * [STM Nucleo board](https://github.com/jacopomv/FeedTheReef/tree/master/Nucleo%20STM32%20)
 * [Backend](https://github.com/jacopomv/FeedTheReef/tree/master/Raspberry%20Pi%203/Backend/PythonServer)
 * [Frontend](https://github.com/jacopomv/FeedTheReef/tree/master/Raspberry%20Pi%203/Frontend/Webserver)
+**-Update**
+* [STM B-L072Z-LRWAN1](https://github.com/jacopomv/FeedTheReef/tree/master/STM%20B-L072Z-LRWAN1)
 
 
 # Contact our project members
