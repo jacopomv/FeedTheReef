@@ -4,6 +4,8 @@
 Feed The Reef is a group project developed during the Pervasive Systems course at "La Sapienza" University of Rome. The idea is to build an IoT environment in order to realize a smart fish tank. The goal of the project is to provide a cheap and versatile feeding system, in order to allow fish tank's owners to take care of their pets while abroad, during holidays or during busy work days.
 The main advantage of our solution, compared to the existing services on the market, is the possibility to access the sensors through a web interface, being able to interact with the fish tank whenever the user wants; moreover, is a cheap and versatile solution that can be easily implemented to interact also with other types of feeding environments (e.g. dogs, cats, birds, etc.).
 
+**Update**
+An extra work on the project is in progress in order to take advantage of the LoRa technology for increasing its adaptability.
 ## How does it work?
 The project is conceptually divided into three parts:
 * The frontend level that presents the actual status of the environment through a web interface and allows the user to interact with the system
@@ -19,19 +21,25 @@ Moreover, the Raspberry is connected through a Serial Peripheral Interface (SPI)
 
 **Update**
 The "Nucleo STM32-F401" board has been changed with the "B-L072Z-LRWAN1" in order to permit the communication with the Raspberry Pi 3 through the LoRa tecnology.
-Still some work is going on for completing the porting. In particular the compatibility with the temperature sensor DS1820. Help me on the [mbed forum] (https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
+The communication is encrypted through symmetric encryption technology, the well known AES algorith.
+Still some work is going on for completing the porting. In particular the compatibility with the temperature sensor DS1820. Help me on the [mbed forum](https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
 ### Web Interface
 ![](Documentation/images/Interface.png)
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
+
+**Update**
+In addition it is available the [Grafana](https://grafana.com/) platform for viewing and monitor the data recorded by the system.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
-* Nucleo STM32-F401 / B-L072Z-LRWAN1
+* Nucleo STM32-F401
 * Analog PH Sensor
 * Analog Temperature Sensor
 * Led lights
 * Webcam
 
+**Update**
+* B-L072Z-LRWAN1
 ![](Documentation/images/whole_architecture.jpg)
 
 
@@ -43,8 +51,8 @@ This is the simple web interface through which the user is able to send commands
 * PostgreSQL
 * Bash scripting
 
-*Update*
-Now on the server is possible to use the framework [Grafana](https://grafana.com/) in order to better monitor the system.
+**Update**
+* Grafana
 
 ### Future features
 <p align="middle">
