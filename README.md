@@ -18,14 +18,15 @@ The information are visible through an Apache Web server supported by a PHP-fpm 
 Moreover, the Raspberry is connected through a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
 **Update**
-The "Nucleo STM32-F401" board has been changed with the B-L072Z-LRWAN1 in order to permit the communication (ref. c in figure) with the Raspberry Pi 3 through the LoRa tecnology.
+The "Nucleo STM32-F401" board has been changed with the "B-L072Z-LRWAN1" in order to permit the communication with the Raspberry Pi 3 through the LoRa tecnology.
+Still some work is going on for completing the porting. In particular the compatibility with the temperature sensor DS1820. Help me on the [mbed forum] (https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
 ### Web Interface
 ![](Documentation/images/Interface.png)
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
-* Nucleo STM32-F401
+* Nucleo STM32-F401 / B-L072Z-LRWAN1
 * Analog PH Sensor
 * Analog Temperature Sensor
 * Led lights
@@ -41,6 +42,9 @@ This is the simple web interface through which the user is able to send commands
 * PHP
 * PostgreSQL
 * Bash scripting
+
+*Update*
+Now on the server is possible to use the framework [Grafana](https://grafana.com/) in order to better monitor the system.
 
 ### Future features
 <p align="middle">
