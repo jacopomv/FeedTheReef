@@ -13,7 +13,7 @@ The project is conceptually divided into three parts:
 * The low layer, realised entirely on the Nucleo STM32 board, that collects all information retrived from sensors and executes the commands received from the middle layer (e.g. status of the enviroment, feed the fishes, temperature value, etc.).
 
 **-Update**
-The new update will permit the low layer to communicate with the middle layer remotely through LoRa technology. This update permits to increase the number of low-level devices connected to the middle layer and freely move them in the environment.
+The the low layer is now able to remotely communicate with the middle layer through LoRa technology. This update permits to increase the number of low-level devices connected to the middle layer and freely move them in the environment.
 ### Architecture
 ![](Documentation/images/architecture.png)
 #### Brief description
@@ -30,7 +30,7 @@ Still, some work is going on for completing the porting. In particular, the comp
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 
 **-Update**
-The project now include the [Grafana](https://grafana.com/) platform for viewing and monitor through plots the data recorded by the system. The Grafana server is installed and runs on the Raspberri Pi 3.
+The project now include the [Grafana](https://grafana.com/) platform for viewing and monitor, through plots, the data recorded by the system. The Grafana server is installed and runs on the Raspberry Pi 3.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
