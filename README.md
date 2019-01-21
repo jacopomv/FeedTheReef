@@ -19,7 +19,7 @@ The user is able to connect to the web interface from his own laptop or mobile d
 The information are visible through an Apache Web server supported by a PHP-fpm interpreter, which communicates directly with the backend: a Python Web server running on the Raspberry Pi 3.
 Moreover, the Raspberry is connected through a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
-**Update**
+**-Update**
 The "Nucleo STM32-F401" board has been changed with the "B-L072Z-LRWAN1" in order to permit the communication with the Raspberry Pi 3 through the LoRa tecnology.
 The communication is encrypted through symmetric encryption technology, the well known AES algorith.
 Still some work is going on for completing the porting. In particular the compatibility with the temperature sensor DS1820. Help me on the [mbed forum](https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
@@ -27,7 +27,7 @@ Still some work is going on for completing the porting. In particular the compat
 ![](Documentation/images/Interface.png)
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 
-**Update**
+**-Update**
 In addition it is available the [Grafana](https://grafana.com/) platform for viewing and monitor the data recorded by the system.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
@@ -38,7 +38,7 @@ In addition it is available the [Grafana](https://grafana.com/) platform for vie
 * Led lights
 * Webcam
 
-**Update**
+**-Update**
 * B-L072Z-LRWAN1
 ![](Documentation/images/whole_architecture.jpg)
 
@@ -51,7 +51,7 @@ In addition it is available the [Grafana](https://grafana.com/) platform for vie
 * PostgreSQL
 * Bash scripting
 
-**Update**
+**-Update**
 * Grafana
 
 ### Future features
