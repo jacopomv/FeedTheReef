@@ -4,7 +4,7 @@
 Feed The Reef is a group project developed during the Pervasive Systems course at "La Sapienza" University of Rome. The idea is to build an IoT environment in order to realize a smart fish tank. The goal of the project is to provide a cheap and versatile feeding system, in order to allow fish tank's owners to take care of their pets while abroad, during holidays or during busy work days.
 The main advantage of our solution, compared to the existing services on the market, is the possibility to access the sensors through a web interface, being able to interact with the fish tank whenever the user wants; moreover, is a cheap and versatile solution that can be easily implemented to interact also with other types of feeding environments (e.g. dogs, cats, birds, etc.).
 
-**Update**
+**-Update**
 An extra work on the project is in progress in order to take advantage of the LoRa technology for increasing its adaptability.
 ## How does it work?
 The project is conceptually divided into three parts:
