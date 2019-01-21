@@ -5,13 +5,15 @@ Feed The Reef is a group project developed during the Pervasive Systems course a
 The main advantage of our solution, compared to the existing services on the market, is the possibility to access the sensors through a web interface, being able to interact with the fish tank whenever the user wants; moreover, is a cheap and versatile solution that can be easily implemented to interact also with other types of feeding environments (e.g. dogs, cats, birds, etc.).
 
 **-Update**
-An extra work on the project is in progress in order to take advantage of the LoRa technology for increasing its adaptability.
+An extra work on the project is in progress in order to increase its adaptability taking advantage of the LoRa technology.
 ## How does it work?
 The project is conceptually divided into three parts:
-* The frontend level that presents the actual status of the environment through a web interface and allows the user to interact with the system
+* The frontend layer that presents the actual status of the environment through a web interface and allows the user to interact with the system
 * The middle layer, realised with a Python server continuously running on the Raspberry Pi 3, which elaborates all the information available from both the high and lower levels
-* The low level, realised entirely on the Nucleo STM32 board, that collects all information retrived from sensors and executes the commands received from the middle layer (e.g. status of the enviroment, feed the fishes, temperature value, etc.).
+* The low layer, realised entirely on the Nucleo STM32 board, that collects all information retrived from sensors and executes the commands received from the middle layer (e.g. status of the enviroment, feed the fishes, temperature value, etc.).
 
+**-Update**
+The new update will permit the low layer to communicate with the middle layer remotly through LoRa technology. This update permits to increase the number of low level devices connected to the middle layer and freely move them in the environment.
 ### Architecture
 ![](Documentation/images/architecture.png)
 #### Brief description
@@ -20,9 +22,9 @@ The information are visible through an Apache Web server supported by a PHP-fpm 
 Moreover, the Raspberry is connected through a Serial Peripheral Interface (SPI) to the Nucleo STM32-F401 board, which sends commands towards different sensors, depending on the action that the user wants to accomplish.
 
 **-Update**
-The "Nucleo STM32-F401" board has been changed with the "B-L072Z-LRWAN1" in order to permit the communication with the Raspberry Pi 3 through the LoRa tecnology.
-The communication is encrypted through symmetric encryption technology, the well known AES algorith.
-Still some work is going on for completing the porting. In particular the compatibility with the temperature sensor DS1820. Help me on the [mbed forum](https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
+The "Nucleo STM32-F401" board has been changed with the "B-L072Z-LRWAN1" in order to remove the usb cable between the board and the Raspberry Pi 3 and permit the remote communication through the LoRa tecnology.
+The communication is encrypted through symmetric encryption technology, the well known AES algorithm.
+Still some work is going on for completing the porting. In particular the compatibility with the temperature sensor DS1820 not recognized by the board. Help me on this issue on the [official mbed forum](https://os.mbed.com/questions/84204/Detection-of-tempertaure-sensor-DS1820-o/#answer15935)
 ### Web Interface
 ![](Documentation/images/Interface.png)
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
