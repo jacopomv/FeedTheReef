@@ -30,7 +30,7 @@ Still, some work is going on for completing the porting. In particular, the comp
 This is the simple web interface through which the user is able to send commands remotely to the system and receive back a live streaming from the webcam.
 
 **-Update**
-The project now include the [Grafana](https://grafana.com/) platform for viewing and monitor, through plots, the data recorded by the system. The Grafana server is installed and runs on the Raspberry Pi 3.
+The project now includes the [Grafana](https://grafana.com/) platform for viewing and monitor, through plots, the data recorded by the system. The Grafana server is installed and runs on the Raspberry Pi 3 and, it is connected to the Postgresql DBMS.
 ### Hardware
 ![](Documentation/images/hardware.jpg)
 * Raspberry Pi 3
