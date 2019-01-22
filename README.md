@@ -56,6 +56,7 @@ The project now includes the [Grafana](https://grafana.com/) platform for viewin
 **-Update**
 * Grafana
 
+
 ### Future features
 <p align="middle">
   <img src="Documentation/Blender/Screw.png" width="400" />
